@@ -1,0 +1,1 @@
+{  "id": "akai-generic",  "displayName": "Akai (Genérico)",  "match": {    "vid": 2536,    "pid": null,    "nameContains": "AKAI"  },  "led": {    "mode": "note",    "channel": 0,    "onValue": 127,    "offValue": 0,    "init": []  },  "sanitization": {    "maxMessagesPerSecond": 4000,    "coalesceWindowMs": 5  }}
