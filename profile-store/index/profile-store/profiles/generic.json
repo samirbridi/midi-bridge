@@ -1,1 +1,0 @@
-{  "id": "generic",  "displayName": "Genérico",  "match": {    "vid": null,    "pid": null,    "nameContains": null  },  "led": {    "mode": "note",    "channel": 0,    "onValue": 127,    "offValue": 0,    "init": []  },  "sanitization": {    "maxMessagesPerSecond": 4000,    "coalesceWindowMs": 5  }}
