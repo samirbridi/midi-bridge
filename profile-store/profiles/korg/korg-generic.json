@@ -1,0 +1,7 @@
+{
+  "id": "korg-generic",
+  "displayName": "Korg (Genérico)",
+  "match": { "vid": null, "pid": null, "nameContains": "KORG" },
+  "led": { "mode": "note", "channel": 0, "onValue": 127, "offValue": 0, "init": [] },
+  "sanitization": { "maxMessagesPerSecond": 4000, "coalesceWindowMs": 5 }
+}
