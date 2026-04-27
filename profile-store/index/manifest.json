@@ -1,1 +1,75 @@
-{  "manifestVersion": 1,  "profiles": [    {      "id": "generic",      "displayName": "Genérico",      "schemaVersion": 1,      "match": {        "vid": null,        "pid": null,        "nameContains": null      },      "url": "https://raw.githubusercontent.com/samirbridi/midi-bridge/main/profile-store/profiles/generic.json",      "sha256": "2c730997c269dac8843a72fefc9d1d4a1a86d9138335bff789ccadca8210ccc1",      "sizeBytes": 323,      "tags": [        "generic"      ]    },    {      "id": "akai-generic",      "displayName": "Akai (Genérico)",      "schemaVersion": 1,      "match": {        "vid": 2536,        "pid": null,        "nameContains": "AKAI"      },      "url": "https://raw.githubusercontent.com/samirbridi/midi-bridge/main/profile-store/profiles/akai/akai-generic.json",      "sha256": "ef4f37e3775c9004b0e0ad4ed45a4ba2957934fbed592398974863eedaa8ce9b",      "sizeBytes": 337,      "tags": [        "akai"      ]    }  ]}
+{
+  "manifestVersion": 1,
+  "profiles": [
+    {
+      "id": "akai-generic",
+      "displayName": "Akai (Genérico)",
+      "schemaVersion": 1,
+      "match": {
+        "vid": 2536,
+        "pid": null,
+        "nameContains": "AKAI"
+      },
+      "url": "https://raw.githubusercontent.com/samirbridi/midi-bridge/main/profile-store/profiles/akai/akai-generic.json",
+      "sha256": "ef4f37e3775c9004b0e0ad4ed45a4ba2957934fbed592398974863eedaa8ce9b",
+      "sizeBytes": 337,
+      "tags": ["akai"]
+    },
+    {
+      "id": "novation-generic",
+      "displayName": "Novation (Genérico)",
+      "schemaVersion": 1,
+      "match": {
+        "vid": null,
+        "pid": null,
+        "nameContains": "NOVATION"
+      },
+      "url": "https://raw.githubusercontent.com/samirbridi/midi-bridge/main/profile-store/profiles/novation/novation-generic.json",
+      "sha256": "d0b20943f47d774a900ac48ded784c32b5f19b81dabee8d858aa460e790a8e4b",
+      "sizeBytes": 349,
+      "tags": ["novation"]
+    },
+    {
+      "id": "behringer-generic",
+      "displayName": "Behringer (Genérico)",
+      "schemaVersion": 1,
+      "match": {
+        "vid": null,
+        "pid": null,
+        "nameContains": "BEHRINGER"
+      },
+      "url": "https://raw.githubusercontent.com/samirbridi/midi-bridge/main/profile-store/profiles/behringer/behringer-generic.json",
+      "sha256": "46b7b21ad7cf17dd4d94ad21d15aec34bec6397ee69244cc7dba78efdb203a5b",
+      "sizeBytes": 352,
+      "tags": ["behringer"]
+    },
+    {
+      "id": "korg-generic",
+      "displayName": "Korg (Genérico)",
+      "schemaVersion": 1,
+      "match": {
+        "vid": null,
+        "pid": null,
+        "nameContains": "KORG"
+      },
+      "url": "https://raw.githubusercontent.com/samirbridi/midi-bridge/main/profile-store/profiles/korg/korg-generic.json",
+      "sha256": "fe8f60213adb2b8428f9298fd28eda002bb4c5ac3ac3e5279d0956199a5a1d43",
+      "sizeBytes": 337,
+      "tags": ["korg"]
+    },
+    {
+      "id": "generic",
+      "displayName": "Genérico",
+      "schemaVersion": 1,
+      "match": {
+        "vid": null,
+        "pid": null,
+        "nameContains": "*"
+      },
+      "url": "https://raw.githubusercontent.com/samirbridi/midi-bridge/main/profile-store/profiles/generic.json",
+      "sha256": "2c730997c269dac8843a72fefc9d1d4a1a86d9138335bff789ccadca8210ccc1",
+      "sizeBytes": 323,
+      "tags": ["generic"]
+    }
+  ]
+}
