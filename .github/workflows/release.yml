@@ -55,6 +55,11 @@ jobs:
           Compress-Archive -Path (Join-Path $pub "*") -DestinationPath $zip
           "zip=$zip" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
 
+          $sha = (Get-FileHash -Algorithm SHA256 -Path $zip).Hash.ToLowerInvariant()
+          $shaPath = "$zip.sha256"
+          "$sha  $(Split-Path -Leaf $zip)" | Set-Content -Path $shaPath -Encoding ascii
+          "sha256=$shaPath" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
       - name: push
         shell: pwsh
         run: |
@@ -85,3 +90,4 @@ jobs:
           body_path: ${{ steps.notes.outputs.path }}
           files: |
             ${{ steps.publish.outputs.zip }}
+            ${{ steps.publish.outputs.sha256 }}
