@@ -41,6 +41,26 @@ O executável ficará em algo como:
 
 `.\src\Bridge.Service\bin\Release\net8.0\win-x64\publish\Bridge.Service.exe`
 
+## Rodar a UI (Tray)
+
+O `Bridge.Tray` mostra um ícone na bandeja para:
+
+- ver status (service state, profile, etc.)
+- start/stop do serviço
+- abrir logs/diagnóstico
+
+Publicar:
+
+```powershell
+dotnet publish .\src\Bridge.Tray\Bridge.Tray.csproj -c Release -r win-x64 --self-contained false
+```
+
+Executar:
+
+```powershell
+.\src\Bridge.Tray\bin\Release\net8.0\win-x64\publish\Bridge.Tray.exe
+```
+
 ### Instalar (PowerShell como Administrador)
 
 ```powershell
@@ -82,4 +102,3 @@ dotnet run --project .\src\Bridge.Service\Bridge.Service.csproj -c Release
 
 - Use a porta `{NomeDetectado} - KEYS` como entrada para mapear botões/faders.
 - Use a porta `{NomeDetectado} - LEDs` como saída para feedback/LEDs.
-
