@@ -1,0 +1,15 @@
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/bin/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.deps.json
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/bin/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.dll
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/bin/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.pdb
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/bin/Release/net8.0/Bridge.Core.dll
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/bin/Release/net8.0/Bridge.Core.pdb
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.csproj.AssemblyReference.cache
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.AssemblyInfoInputs.cache
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.AssemblyInfo.cs
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.csproj.CoreCompileInputs.cache
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.I.DDFAA907.Up2Date
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.dll
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/refint/Bridge.IO.VirtualMidi.TeVirtualMidi.dll
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/Bridge.IO.VirtualMidi.TeVirtualMidi.pdb
+/workspace/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/Release/net8.0/ref/Bridge.IO.VirtualMidi.TeVirtualMidi.dll

@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Bridge.IO.VirtualMidi.TeVirtualMidi/1.0.0": {
+        "dependencies": {
+          "Bridge.Core": "1.0.0"
+        },
+        "runtime": {
+          "Bridge.IO.VirtualMidi.TeVirtualMidi.dll": {}
+        }
+      },
+      "Bridge.Core/1.0.0": {
+        "runtime": {
+          "Bridge.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bridge.IO.VirtualMidi.TeVirtualMidi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Bridge.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
