@@ -275,19 +275,6 @@ public class Worker : BackgroundService
         return best ?? inputs[0];
     }
 
-    private BridgeProfile? ResolveProfileForInput(WinMmMidiDeviceInfo input, out int? vid, out int? pid)
-    {
-        vid = null;
-        pid = null;
-        if (_vidPidResolver.TryResolve(input.Name, out var v, out var p))
-        {
-            vid = v;
-            pid = p;
-        }
-
-        return _profileStore.ResolveProfileForDevice(vid, pid, input.Name) ?? ResolveBuiltInFallback(input.Name);
-    }
-
     private static WinMmMidiDeviceInfo PickOutput(IReadOnlyList<WinMmMidiDeviceInfo> outputs, string inputName)
     {
         var forced = Environment.GetEnvironmentVariable("USB_MIDI_BRIDGE_DEVICE_OUT_CONTAINS");
@@ -305,6 +292,19 @@ public class Worker : BackgroundService
             || inputName.Contains(o.Name, StringComparison.OrdinalIgnoreCase));
 
         return byName ?? outputs[0];
+    }
+
+    private BridgeProfile? ResolveProfileForInput(WinMmMidiDeviceInfo input, out int? vid, out int? pid)
+    {
+        vid = null;
+        pid = null;
+        if (_vidPidResolver.TryResolve(input.Name, out var v, out var p))
+        {
+            vid = v;
+            pid = p;
+        }
+
+        return _profileStore.ResolveProfileForDevice(vid, pid, input.Name) ?? ResolveBuiltInFallback(input.Name);
     }
 
     private sealed class DeviceSession : IAsyncDisposable
