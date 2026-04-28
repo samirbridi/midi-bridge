@@ -14,6 +14,7 @@ public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
     private readonly WinMmMidiEnumerator _enumerator = new();
+    private readonly WinMmVidPidResolver _vidPidResolver = new();
     private readonly ProfileStore _profileStore;
     private readonly ProfileStoreOptions _profileStoreOptions;
     private readonly Dictionary<string, string> _lastProfileByInputName = new(StringComparer.OrdinalIgnoreCase);
@@ -111,7 +112,7 @@ public class Worker : BackgroundService
     {
         foreach (var input in inputs)
         {
-            var resolved = _profileStore.ResolveProfileForDevice(null, null, input.Name) ?? ResolveBuiltInFallback(input.Name);
+            var resolved = ResolveProfileForInput(input, out var vid, out var pid);
             var id = resolved?.Id ?? "none";
 
             if (_lastProfileByInputName.TryGetValue(input.Name, out var last) && string.Equals(last, id, StringComparison.OrdinalIgnoreCase))
@@ -120,7 +121,7 @@ public class Worker : BackgroundService
             }
 
             _lastProfileByInputName[input.Name] = id;
-            _logger.LogInformation("Profile selected for '{device}': {profileId}", input.Name, id);
+            _logger.LogInformation("Profile selected for '{device}': {profileId} (vid={vid} pid={pid})", input.Name, id, vid, pid);
         }
     }
 
@@ -182,7 +183,7 @@ public class Worker : BackgroundService
         }
         _lastInputName = input.Name;
 
-        var profile = _profileStore.ResolveProfileForDevice(null, null, input.Name) ?? ResolveBuiltInFallback(input.Name);
+        var profile = ResolveProfileForInput(input, out var vid, out var pid);
         if (profile is null)
         {
             _logger.LogWarning("No profile resolved for '{device}', skipping session creation", input.Name);
@@ -194,12 +195,14 @@ public class Worker : BackgroundService
             _session = new DeviceSession(_logger, input, output, profile, _ledStateCache, stoppingToken);
             _sessionKey = key;
             _logger.LogInformation(
-                "Bridge session started: IN='{inName}' OUT='{outName}' VPORTS='{keysPort}','{ledsPort}' PROFILE='{profileId}'",
+                "Bridge session started: IN='{inName}' OUT='{outName}' VPORTS='{keysPort}','{ledsPort}' PROFILE='{profileId}' (vid={vid} pid={pid})",
                 input.Name,
                 output.Name,
                 _session.KeysPortName,
                 _session.LedsPortName,
-                profile.Id
+                profile.Id,
+                vid,
+                pid
             );
         }
         catch (Exception ex)
@@ -242,11 +245,19 @@ public class Worker : BackgroundService
 
         foreach (var input in inputs)
         {
-            var profile = _profileStore.ResolveProfileForDevice(null, null, input.Name) ?? ResolveBuiltInFallback(input.Name);
+            int? vid = null;
+            int? pid = null;
+            if (_vidPidResolver.TryResolve(input.Name, out var v, out var p))
+            {
+                vid = v;
+                pid = p;
+            }
+
+            var profile = _profileStore.ResolveProfileForDevice(vid, pid, input.Name) ?? ResolveBuiltInFallback(input.Name);
             var score = 0;
             if (profile is not null && !string.Equals(profile.Id, "generic", StringComparison.OrdinalIgnoreCase))
             {
-                score += 100;
+                score += vid is not null && pid is not null ? 200 : 100;
             }
 
             if (profile is not null)
@@ -262,6 +273,19 @@ public class Worker : BackgroundService
         }
 
         return best ?? inputs[0];
+    }
+
+    private BridgeProfile? ResolveProfileForInput(WinMmMidiDeviceInfo input, out int? vid, out int? pid)
+    {
+        vid = null;
+        pid = null;
+        if (_vidPidResolver.TryResolve(input.Name, out var v, out var p))
+        {
+            vid = v;
+            pid = p;
+        }
+
+        return _profileStore.ResolveProfileForDevice(vid, pid, input.Name) ?? ResolveBuiltInFallback(input.Name);
     }
 
     private static WinMmMidiDeviceInfo PickOutput(IReadOnlyList<WinMmMidiDeviceInfo> outputs, string inputName)
