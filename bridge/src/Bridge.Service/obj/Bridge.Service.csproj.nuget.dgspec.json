@@ -1,0 +1,329 @@
+{
+  "format": 1,
+  "restore": {
+    "/workspace/bridge/src/Bridge.Service/Bridge.Service.csproj": {}
+  },
+  "projects": {
+    "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj",
+        "projectName": "Bridge.Core",
+        "projectPath": "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspace/bridge/src/Bridge.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/root/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.420/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/bridge/src/Bridge.Diagnostics/Bridge.Diagnostics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/bridge/src/Bridge.Diagnostics/Bridge.Diagnostics.csproj",
+        "projectName": "Bridge.Diagnostics",
+        "projectPath": "/workspace/bridge/src/Bridge.Diagnostics/Bridge.Diagnostics.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspace/bridge/src/Bridge.Diagnostics/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/root/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj": {
+                "projectPath": "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.420/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/bridge/src/Bridge.IO.Midi1.WinMM/Bridge.IO.Midi1.WinMM.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/bridge/src/Bridge.IO.Midi1.WinMM/Bridge.IO.Midi1.WinMM.csproj",
+        "projectName": "Bridge.IO.Midi1.WinMM",
+        "projectPath": "/workspace/bridge/src/Bridge.IO.Midi1.WinMM/Bridge.IO.Midi1.WinMM.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspace/bridge/src/Bridge.IO.Midi1.WinMM/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/root/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj": {
+                "projectPath": "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.420/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/bridge/src/Bridge.IO.VirtualMidi.TeVirtualMidi/Bridge.IO.VirtualMidi.TeVirtualMidi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/bridge/src/Bridge.IO.VirtualMidi.TeVirtualMidi/Bridge.IO.VirtualMidi.TeVirtualMidi.csproj",
+        "projectName": "Bridge.IO.VirtualMidi.TeVirtualMidi",
+        "projectPath": "/workspace/bridge/src/Bridge.IO.VirtualMidi.TeVirtualMidi/Bridge.IO.VirtualMidi.TeVirtualMidi.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspace/bridge/src/Bridge.IO.VirtualMidi.TeVirtualMidi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/root/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj": {
+                "projectPath": "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.420/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspace/bridge/src/Bridge.Service/Bridge.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspace/bridge/src/Bridge.Service/Bridge.Service.csproj",
+        "projectName": "Bridge.Service",
+        "projectPath": "/workspace/bridge/src/Bridge.Service/Bridge.Service.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspace/bridge/src/Bridge.Service/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/root/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj": {
+                "projectPath": "/workspace/bridge/src/Bridge.Core/Bridge.Core.csproj"
+              },
+              "/workspace/bridge/src/Bridge.Diagnostics/Bridge.Diagnostics.csproj": {
+                "projectPath": "/workspace/bridge/src/Bridge.Diagnostics/Bridge.Diagnostics.csproj"
+              },
+              "/workspace/bridge/src/Bridge.IO.Midi1.WinMM/Bridge.IO.Midi1.WinMM.csproj": {
+                "projectPath": "/workspace/bridge/src/Bridge.IO.Midi1.WinMM/Bridge.IO.Midi1.WinMM.csproj"
+              },
+              "/workspace/bridge/src/Bridge.IO.VirtualMidi.TeVirtualMidi/Bridge.IO.VirtualMidi.TeVirtualMidi.csproj": {
+                "projectPath": "/workspace/bridge/src/Bridge.IO.VirtualMidi.TeVirtualMidi/Bridge.IO.VirtualMidi.TeVirtualMidi.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/workspace/.dotnet/sdk/8.0.420/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
