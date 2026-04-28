@@ -1,0 +1,15 @@
+/workspace/src/Bridge.Diagnostics/bin/Release/net8.0/Bridge.Diagnostics.deps.json
+/workspace/src/Bridge.Diagnostics/bin/Release/net8.0/Bridge.Diagnostics.dll
+/workspace/src/Bridge.Diagnostics/bin/Release/net8.0/Bridge.Diagnostics.pdb
+/workspace/src/Bridge.Diagnostics/bin/Release/net8.0/Bridge.Core.dll
+/workspace/src/Bridge.Diagnostics/bin/Release/net8.0/Bridge.Core.pdb
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.Diagnostics.csproj.AssemblyReference.cache
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.Diagnostics.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.Diagnostics.AssemblyInfoInputs.cache
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.Diagnostics.AssemblyInfo.cs
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.Diagnostics.csproj.CoreCompileInputs.cache
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.D.D6247409.Up2Date
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.Diagnostics.dll
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/refint/Bridge.Diagnostics.dll
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/Bridge.Diagnostics.pdb
+/workspace/src/Bridge.Diagnostics/obj/Release/net8.0/ref/Bridge.Diagnostics.dll
