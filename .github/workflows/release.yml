@@ -3,6 +3,10 @@ name: release
 on:
   workflow_dispatch:
 
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -19,6 +23,7 @@ jobs:
         shell: pwsh
         run: |
           git fetch --tags --force
+          git fetch origin main --force
 
       - uses: actions/setup-dotnet@v4
         with:
@@ -29,6 +34,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: sync main
+        shell: pwsh
+        run: |
+          git pull --rebase origin main
 
       - name: version
         id: version
