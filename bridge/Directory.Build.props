@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.1000</FileVersion>
+    <InformationalVersion>v1.0.0 (build 1000)</InformationalVersion>
+  </PropertyGroup>
+</Project>
+
