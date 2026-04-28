@@ -56,7 +56,7 @@ function Write-DirectoryBuildProps([string] $path, [int] $major, [int] $minor, [
 }
 
 function Normalize-Subject([string] $subject, [string] $type) {
-    $prefix = "$type: "
+    $prefix = "${type}: "
     if ($subject.StartsWith($prefix, [System.StringComparison]::OrdinalIgnoreCase)) {
         return $subject.Substring($prefix.Length).Trim()
     }
