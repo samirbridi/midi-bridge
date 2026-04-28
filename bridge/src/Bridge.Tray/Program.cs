@@ -1,9 +1,7 @@
-using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using Bridge.Tray;
 
-Console.WriteLine("USB-MIDI Bridge (Tray placeholder)");
-if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-{
-    Console.WriteLine("Non-Windows OS detected. Tray UI is disabled.");
-}
-
-Console.WriteLine("Next steps: implement tray UI + IPC to Bridge.Service.");
+Application.SetHighDpiMode(HighDpiMode.SystemAware);
+Application.EnableVisualStyles();
+Application.SetCompatibleTextRenderingDefault(false);
+Application.Run(new TrayAppContext());

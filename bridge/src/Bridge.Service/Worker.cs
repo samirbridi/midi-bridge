@@ -15,6 +15,7 @@ public class Worker : BackgroundService
     private readonly ILogger<Worker> _logger;
     private readonly WinMmMidiEnumerator _enumerator = new();
     private readonly WinMmVidPidResolver _vidPidResolver = new();
+    private readonly BridgeStatusState _statusState;
     private readonly ProfileStore _profileStore;
     private readonly ProfileStoreOptions _profileStoreOptions;
     private readonly Dictionary<string, string> _lastProfileByInputName = new(StringComparer.OrdinalIgnoreCase);
@@ -23,9 +24,10 @@ public class Worker : BackgroundService
     private string? _sessionKey;
     private string? _lastInputName;
 
-    public Worker(ILogger<Worker> logger)
+    public Worker(ILogger<Worker> logger, BridgeStatusState statusState)
     {
         _logger = logger;
+        _statusState = statusState;
         var cacheRoot = ProfileStorePaths.GetDefaultRoot();
         var cache = new ProfileStoreCache(cacheRoot);
         SeedBuiltInProfiles(cache);
@@ -158,6 +160,7 @@ public class Worker : BackgroundService
                 _logger.LogInformation("Bridge session stopped (no devices)");
             }
 
+            _statusState.SetIdle("no devices");
             return;
         }
 
@@ -204,12 +207,22 @@ public class Worker : BackgroundService
                 vid,
                 pid
             );
+            _statusState.SetRunning(
+                inputName: input.Name,
+                outputName: output.Name,
+                profileId: profile.Id,
+                vid: vid,
+                pid: pid,
+                keysPortName: _session.KeysPortName,
+                ledsPortName: _session.LedsPortName
+            );
         }
         catch (Exception ex)
         {
             _logger.LogWarning(ex, "Failed to start bridge session");
             _session = null;
             _sessionKey = null;
+            _statusState.SetError("failed to start session");
         }
     }
 
@@ -275,6 +288,19 @@ public class Worker : BackgroundService
         return best ?? inputs[0];
     }
 
+    private BridgeProfile? ResolveProfileForInput(WinMmMidiDeviceInfo input, out int? vid, out int? pid)
+    {
+        vid = null;
+        pid = null;
+        if (_vidPidResolver.TryResolve(input.Name, out var v, out var p))
+        {
+            vid = v;
+            pid = p;
+        }
+
+        return _profileStore.ResolveProfileForDevice(vid, pid, input.Name) ?? ResolveBuiltInFallback(input.Name);
+    }
+
     private static WinMmMidiDeviceInfo PickOutput(IReadOnlyList<WinMmMidiDeviceInfo> outputs, string inputName)
     {
         var forced = Environment.GetEnvironmentVariable("USB_MIDI_BRIDGE_DEVICE_OUT_CONTAINS");
@@ -292,19 +318,6 @@ public class Worker : BackgroundService
             || inputName.Contains(o.Name, StringComparison.OrdinalIgnoreCase));
 
         return byName ?? outputs[0];
-    }
-
-    private BridgeProfile? ResolveProfileForInput(WinMmMidiDeviceInfo input, out int? vid, out int? pid)
-    {
-        vid = null;
-        pid = null;
-        if (_vidPidResolver.TryResolve(input.Name, out var v, out var p))
-        {
-            vid = v;
-            pid = p;
-        }
-
-        return _profileStore.ResolveProfileForDevice(vid, pid, input.Name) ?? ResolveBuiltInFallback(input.Name);
     }
 
     private sealed class DeviceSession : IAsyncDisposable
